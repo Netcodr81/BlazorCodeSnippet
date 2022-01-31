@@ -1,17 +1,21 @@
 ﻿@if (FileFound)
 {
     <div>
-        <div class="copyButtonDiv">
-            <button class="copyButton">
-                <span class="button-text">Copy<img class="copy" src="_content/BlazorCodeSnippets/fontawesome/svgs/regular/clipboard.svg" alt="copy"/></span>
-            </button>
-        </div>
+        @if (AllowCopy)
+        {
+            <div class="copyButtonDiv">
+                <button class="copyButton" @onclick="CopySnippetToClipboard">
+                    <span class="button-text">Copy</span><img class="copy" src="_content/BlazorCodeSnippets/fontawesome/svgs/regular/clipboard.svg" alt="copy" />
+                </button>
+            </div>
+        }
+
         <pre>
         <code class="@SelectedLanguage">
 
                 @SnippetCode
-            </code>
-        </pre>
+                </code>
+            </pre>
     </div>
 
 }

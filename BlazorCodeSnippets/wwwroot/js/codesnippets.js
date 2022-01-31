@@ -43,26 +43,22 @@ export function highlightSnippet() {
     document.querySelectorAll('pre code').forEach((el) => {
         hljs.highlightElement(el);
     });
-    var options = {
-        // the selector for the badge template
-        templateSelector: "#CodeBadgeTemplate",
-        // base content selector that is searched for snippets
-        contentSelector: "body",
-        // Delay in ms used for `setTimeout` before badging is applied
-        // Use if you need to time highlighting and badge application
-        // since the badges need to be applied afterwards.
-        // 0 - direct execution (ie. you handle timing
-        loadDelay: 0,
-        // CSS class(es) used to render the copy icon.
-        copyIconClass: "fa fa-copy",
-        // optional content for icons class (<i class="fa fa-copy"></i> or <i class="material-icons">file_copy</i>)
-        copyIconContent: "",
-        // CSS class(es) used to render the done icon.
-        checkIconClass: "fa fa-check text-success",
-        checkIconContent: "",
-        // function called before code is placed on clipboard
-        // Passed in text and returns back text function(text, codeElement) { return text; }
-        onBeforeCodeCopied: null
-    };
+}
+export function copyToClipboard() {
+    let buttonText = document.querySelector(".button-text");
+    buttonText.innerHTML = 'Copied';
+    setTimeout(function () {
+        buttonText.innerHTML = 'Copy';
+    }, 1000);
+    let code = document.querySelector('pre>code');
+    let text = code.textContent || code.innerHTML;
+    console.log(text);
+    let copiedText = document.createElement('textarea');
+    copiedText.value = text.trim();
+    document.body.appendChild(copiedText);
+    copiedText.style.display = "block";
+    copiedText.select();
+    document.execCommand('copy');
+    document.body.removeChild(copiedText);
 }
 //# sourceMappingURL=codesnippets.js.map

@@ -14,6 +14,8 @@ namespace BlazorCodeSnippets.Components
 
         [Parameter] public RenderFragment FileNotFound { get; set; }
 
+        [Parameter] public bool AllowCopy { get; set; } = false;
+
         private string SnippetCode { get; set; }
 
         private string SelectedLanguage;
@@ -58,6 +60,12 @@ namespace BlazorCodeSnippets.Components
 
             var module = await moduleTask.Value;
             await module.InvokeVoidAsync("highlightSnippet");
+        }
+
+        private async Task CopySnippetToClipboard()
+        {
+            var module = await moduleTask.Value;
+            await module.InvokeVoidAsync("copyToClipboard");
         }
 
         public async ValueTask DisposeAsync()
