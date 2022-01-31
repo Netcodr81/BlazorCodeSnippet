@@ -1,10 +1,19 @@
 ﻿@if (FileFound)
 {
- <pre class="code">
-   <code class="@SelectedLanguage">
-       @SnippetCode
-   </code>
-    </pre>
+    <div>
+        <div class="copyButtonDiv">
+            <button class="copyButton">
+                <span class="button-text">Copy<img class="copy" src="_content/BlazorCodeSnippets/fontawesome/svgs/regular/clipboard.svg" alt="copy"/></span>
+            </button>
+        </div>
+        <pre>
+        <code class="@SelectedLanguage">
+
+                @SnippetCode
+            </code>
+        </pre>
+    </div>
+
 }
 else
 {

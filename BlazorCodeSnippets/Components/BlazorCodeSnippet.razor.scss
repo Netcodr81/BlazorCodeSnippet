@@ -1,0 +1,46 @@
+﻿.copyButton {
+    background-color: #817c7c85;
+    display: inline-block;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+}
+
+.copyButton:hover {
+    background-color: #7a7777b8;
+    transition: background-color 1s;
+}
+
+
+.copyButtonDiv {
+    display: flex;
+    justify-content: end;
+    z-index: 2;
+    position: relative;
+    top: 30px;
+}
+
+img.copy {
+    height: 20px;
+    padding-bottom:3px;
+    padding-left:5px;
+}
+
+pre code.hljs {
+    padding: 30px;
+}
+
+.button-text {
+    display: inline-block;
+    font-size: .85em;
+    color: #000;
+    font-weight: 500;
+}
+
+/*.copyButton > span {
+    padding: 5px 10px 5px 5px
+}*/
