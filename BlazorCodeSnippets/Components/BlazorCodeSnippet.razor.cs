@@ -6,7 +6,9 @@ namespace BlazorCodeSnippets.Components
 {
     public partial class BlazorCodeSnippet : IAsyncDisposable
     {
-        [Inject] HttpClient HttpClient { get; set; }
+        [Inject] IHttpClientFactory HttpClientFactory { get; set; }
+
+        [Inject] NavigationManager NavigationManager { get; set; }
 
         [Parameter] public string SnippetFilePath { get; set; }
 
@@ -15,6 +17,8 @@ namespace BlazorCodeSnippets.Components
         [Parameter] public RenderFragment FileNotFound { get; set; }
 
         [Parameter] public bool AllowCopy { get; set; } = false;
+
+
 
         private string SnippetCode { get; set; }
 
@@ -26,6 +30,7 @@ namespace BlazorCodeSnippets.Components
 
         [Inject] IJSRuntime _jsRuntime { get; set; }
 
+
         public BlazorCodeSnippet()
         {
             moduleTask = new(() => _jsRuntime.InvokeAsync<IJSObjectReference>(
@@ -34,11 +39,15 @@ namespace BlazorCodeSnippets.Components
 
         protected override async Task OnInitializedAsync()
         {
+
             SelectedLanguage = Language.Value;
             byte[]? file = null;
+            var client = HttpClientFactory.CreateClient("BlazorCodeSnippetClient");
+            client.BaseAddress = new Uri(NavigationManager.BaseUri);
+
             try
             {
-                file = await HttpClient.GetByteArrayAsync(SnippetFilePath);
+                file = await client.GetByteArrayAsync(SnippetFilePath);
                 FileFound = true;
                 SnippetCode = Encoding.Default.GetString(file);
 

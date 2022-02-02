@@ -1,3 +1,5 @@
+using BlazorCodeSnippets.Infrastructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +10,7 @@ builder.Services.AddSingleton(new HttpClient
     BaseAddress = new Uri("http://localhost:5049/")
 });
 
-
+builder.Services.AddBlazorCodeSnippet();
 
 var app = builder.Build();
 
