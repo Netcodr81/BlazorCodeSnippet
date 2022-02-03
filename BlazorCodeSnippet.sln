@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCodeSnippets", "BlazorCodeSnippets\BlazorCodeSnippets.csproj", "{63DD53EA-E62F-46E8-9396-122D36A25F3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSnippets.WASM", "BlazorSnippets.WASM\BlazorSnippets.WASM.csproj", "{8E911822-46DE-424A-BA31-9AA1B1B4A713}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSnippets.WASM", "BlazorSnippets.WASM\BlazorSnippets.WASM.csproj", "{8E911822-46DE-424A-BA31-9AA1B1B4A713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSnippets.Server", "BlazorSnippets.Server\BlazorSnippets.Server.csproj", "{97EC0D99-4D45-487D-9688-11C5457BFA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSnippets.Server", "BlazorSnippets.Server\BlazorSnippets.Server.csproj", "{97EC0D99-4D45-487D-9688-11C5457BFA67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
