@@ -1,4 +1,4 @@
-﻿<select @attributes="AdditionalAttributes" class="@CssClass" @onchange="UpdateTheme">
+﻿<select @attributes="AdditionalAttributes" id="@Id" class="@CssClass" @onchange="UpdateTheme">
     @foreach(var theme in AvailableThemes)
     {
         <option value="@theme.GetUrl">@theme.Name</option>

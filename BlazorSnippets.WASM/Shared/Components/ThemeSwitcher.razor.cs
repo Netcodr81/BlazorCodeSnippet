@@ -22,6 +22,7 @@ namespace BlazorSnippets.WASM.Shared.Components
 
         private IEnumerable<Theme>? AvailableThemes { get; set; }
 
+        private string Id { get; set; } = $"theme-switcher-{Guid.NewGuid()}";
 
         public ThemeSwitcher()
         {
@@ -33,6 +34,15 @@ namespace BlazorSnippets.WASM.Shared.Components
         {
             CssClass = new CssBuilder("form-select").AddClassFromAttributes(AdditionalAttributes);
             AvailableThemes = ThemeService.GetThemes();
+        }
+
+        protected async override Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                var module = await moduleTask.Value;
+                await module.InvokeVoidAsync("SetInitialTheme", Id);
+            }
         }
 
         private async Task UpdateTheme(ChangeEventArgs args)

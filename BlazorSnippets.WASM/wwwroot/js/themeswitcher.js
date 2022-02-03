@@ -16,3 +16,13 @@
     document.head.appendChild(newLink);
 
 }
+
+export function SetInitialTheme(elementId){
+
+    let dropdown = document.getElementById(elementId);
+    let currentTheme = document.getElementById('blazorSnippetTheme');
+    let value = currentTheme.getAttribute('href');
+
+    dropdown.value = value;
+
+}
