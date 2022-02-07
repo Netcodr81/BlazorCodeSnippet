@@ -1,0 +1,23 @@
+﻿@page "/demo"
+
+<h3>Demo</h3>
+
+
+<div class="card">
+    <div class="card-header">
+        <p class="mb-2">Available Themes</p>
+        <ThemeSwitcher />
+    </div>
+    <div class="card-body">
+        <BlazorCodeSnippet SnippetFilePath="snippetfiles/test.txt" Language="SnippetLanguage.Cshtml" AllowCopy="true">
+            <FileNotFound>
+                <p>File can't be found</p>
+            </FileNotFound>
+        </BlazorCodeSnippet>
+    </div>
+</div>
+
+
+
+
+

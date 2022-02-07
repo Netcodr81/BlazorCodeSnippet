@@ -1,9 +1,3 @@
-using BlazorComponentUtilities;
-using BlazorSnippets.WASM.Contracts;
-using BlazorSnippets.WASM.Shared.Themes;
-using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-
 namespace BlazorSnippets.WASM.Shared.Components
 {
     public partial class ThemeSwitcher : IAsyncDisposable

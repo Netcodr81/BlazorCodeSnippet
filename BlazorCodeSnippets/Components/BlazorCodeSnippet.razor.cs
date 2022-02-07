@@ -18,7 +18,8 @@ namespace BlazorCodeSnippets.Components
 
         [Parameter] public bool AllowCopy { get; set; } = false;
 
-
+        [Parameter(CaptureUnmatchedValues = true)]
+        public IReadOnlyDictionary<string, object> AdditionalAttributes { get; set; }
 
         private string SnippetCode { get; set; }
 
@@ -41,6 +42,8 @@ namespace BlazorCodeSnippets.Components
         {
 
             SelectedLanguage = Language.Value;
+
+
             byte[]? file = null;
             var client = HttpClientFactory.CreateClient("BlazorCodeSnippetClient");
             client.BaseAddress = new Uri(NavigationManager.BaseUri);
