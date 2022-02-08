@@ -1,7 +1,4 @@
-﻿using BlazorSnippets.WASM.Contracts;
-using BlazorSnippets.WASM.Shared.Themes;
-
-namespace BlazorSnippets.WASM.Services
+﻿namespace BlazorSnippets.WASM.Services
 {
     public class ThemeService : IThemeService
     {
@@ -30,8 +27,8 @@ namespace BlazorSnippets.WASM.Services
                 new (){Name="atelier-estuary-light"},
                 new (){Name="atelier-forest"},
                 new (){Name="atelier-forest-light"},
-                new (){Name="atelier-health"},
-                new (){Name="atelier-health-light"},
+                new (){Name="atelier-heath"},
+                new (){Name="atelier-heath-light"},
                 new (){Name="atelier-lakeside"},
                 new (){Name="atelier-lakeside-light"},
                 new (){Name="atelier-plateau"},
@@ -62,7 +59,6 @@ namespace BlazorSnippets.WASM.Services
                 new (){Name="bright"},
                 new (){Name="brogrammer"},
                 new (){Name="brown-paper"},
-                new (){Name="brown-papersq"},
                 new (){Name="brush-trees"},
                 new (){Name="brush-trees-dark"},
                 new (){Name="chalk"},

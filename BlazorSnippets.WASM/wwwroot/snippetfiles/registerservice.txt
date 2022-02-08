@@ -1,0 +1,8 @@
+﻿<!-- When Adding to Program.cs  -->
+builder.Services.AddBlazorCodeSnippet();
+
+<!-- When Adding to Startup.cs -->
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddBlazorCodeSnippet();
+}

@@ -1,5 +1,7 @@
 ﻿@page "/"
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@inject ILanguagesService LanguageService
 
 <PageTitle>BlazorCodeSnippet</PageTitle>
 
@@ -20,7 +22,7 @@
     Expected
   </div>
   <div class="card-body">
-      <BlazorCodeSnippet SnippetFilePath="/snippetfiles/helloworldcomponent.txt" Language="SnippetLanguage.Razor"/>
+      <BlazorCodeSnippet SnippetFilePath="/snippetfiles/helloworldcomponent.txt" Language="SnippetLanguage.Razor" AllowCopy="true"/>
   </div>
 </div>
 
@@ -40,43 +42,12 @@
     are the languages supported by this library.</p>
 
 <h4>Supported Languages</h4>
+
 <ul>
-    <li>C#</li>
-    <li>Cshtml</li>
-    <li>C++</li>
-    <li>Docker</li>
-    <li>Django</li>
-    <li>Erlang</li>
-    <li>F#</li>
-    <li>Excel</li>
-    <li>G-Code</li>
-    <li>Go</li>
-    <li>Http</li>
-    <li>Html</li>
-    <li>Java</li>
-    <li>JavaScript</li>
-    <li>Json</li>
-    <li>Kotlin</li>
-    <li>Nginx</li>
-    <li>Less</li>
-    <li>Markdown</li>
-    <li>Objective-C</li>
-    <li>Powershell</li>
-    <li>Plain Text</li>
-    <li>PHP</li>
-    <li>Perl</li>
-    <li>Python</li>
-    <li>Razor</li>
-    <li>RSS</li>
-    <li>SCSS</li>
-    <li>SQL</li>
-    <li>SVG</li>
-    <li>T-SQL</li>
-    <li>TypeScript</li>
-    <li>VB.NET</li>
-    <li>VBScript</li>
-    <li>XML based languages</li>
-    <li>Yaml</li>    
+    @foreach(var language in LanguageService.GetAvailableLanguages())
+    {
+        <li>@language</li>
+    }
 </ul>
 
 <p class="mt-3">
@@ -85,3 +56,9 @@
     To see a list of the available themes see the <a href="demo">Demo</a> page.
 </p>
 
+@code{
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("ResetToDefaultStyle");
+    }
+}

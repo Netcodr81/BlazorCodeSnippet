@@ -10,7 +10,7 @@
 
     <link href="BlazorSnippets.WASM.styles.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
-    <link id="blazorSnippetTheme" href="_content/BlazorCodeSnippets/css/BlazorSnippet/default-light.min.css" rel="stylesheet" />
+    <link id="blazorSnippetTheme" href="_content/BlazorCodeSnippets/css/BlazorSnippet/equilibrium-light.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -22,6 +22,25 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        function ResetToDefaultStyle() {
+            let oldLink = document.getElementById('blazorSnippetTheme');
+
+            if (oldLink.getAttribute('href') == "_content/BlazorCodeSnippets/css/BlazorSnippet/default-light.min.css") {
+                return;
+            }
+
+            let newLink = document.createElement('link');
+            newLink.setAttribute('id', 'blazorSnippetTheme');
+            newLink.setAttribute('rel', 'stylesheet');
+            newLink.setAttribute('href', "_content/BlazorCodeSnippets/css/BlazorSnippet/equilibrium-light.min.css");
+            newLink.onload = () => {
+                oldLink.parentElement.removeChild(oldLink);
+            }
+
+            document.head.appendChild(newLink);
+        }
+    </script>
 </body>
 
 </html>

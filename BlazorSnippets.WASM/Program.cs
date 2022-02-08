@@ -1,6 +1,5 @@
 using BlazorCodeSnippets.Infrastructure.Extensions;
 using BlazorSnippets.WASM;
-using BlazorSnippets.WASM.Contracts;
 using BlazorSnippets.WASM.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -12,4 +11,5 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddBlazorCodeSnippet();
 builder.Services.AddTransient<IThemeService, ThemeService>();
+builder.Services.AddTransient<ILanguagesService, LanguagesService>();
 await builder.Build().RunAsync();
