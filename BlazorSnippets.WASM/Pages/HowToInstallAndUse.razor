@@ -15,7 +15,7 @@
 
 <h4 class="mt-3">2. Register Services</h4>
 
-<p>Add the following line of code to the <code>Program.cs</code> or the <code>Startup.cs</code>class</p>
+<p>Add the following line of code to the <code>Program.cs</code> or the <code>Startup.cs</code> class</p>
 <BlazorCodeSnippet Language="SnippetLanguage.Csharp" SnippetFilePath="/snippetfiles/registerservice.txt" AllowCopy="true"/>
 
 <h4 class="mt-3">3. Add Imports</h4>
@@ -23,6 +23,9 @@
 <p>Add the following imports to your _imports.razor</p>
 <BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/snippetfiles/imports.txt" AllowCopy="true"/>
 
+<h4 class="mt-3">3. Add the CSS stylesheet</h4>
+<p>Add the link to the CSS file to the <code>index.html</code> file in a Blazor WASM app or the <code>_Layout.cshtml</code> page in a Blazor Server app</p>
+<BlazorCodeSnippet Language="SnippetLanguage.Html" SnippetFilePath="/snippetfiles/stylelocation.txt" AllowCopy="true"/>
 
 <h3 class="mt-3">Usage</h3>
 
@@ -58,9 +61,11 @@
     </tbody>
 </table>
 
-<h4>1. Add the code snippet you would like to display to your wwwroot folder</h4>
+<p>1. Create a text or html file containing the snippet you want to render for example <code>imports.txt</code>.</p>
 
-<h4 class="mt-3">2. Add the <code>BlazorCodeSnippet</code> to the page</h4>
+<p>2. Add the txt or html file to the wwwroot folder</p>
+
+<p class="mt-3">2. Add the <code>BlazorCodeSnippet</code> to the page</p>
 
 <BlazorCodeSnippet SnippetFilePath="/snippetfiles/example.txt" Language="SnippetLanguage.Razor"/>
 

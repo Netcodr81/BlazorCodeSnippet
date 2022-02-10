@@ -1,1 +1,1 @@
-﻿<BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/imports.txt" AllowCopy="true"/>
+﻿<BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/example.txt" AllowCopy="true"/>
