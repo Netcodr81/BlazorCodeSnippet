@@ -110,17 +110,20 @@ export function highlightSnippet() {
     });    
 }
 
-export function copyToClipboard() {   
+export function copyToClipboard(buttonId, snippetId) {   
 
-    let buttonText = document.querySelector(".button-text"); 
-
+   
+    let button = document.getElementById(`${buttonId}`); 
+    let buttonText = button.querySelector('.button-text');
     buttonText.innerHTML = 'Copied';
 
     setTimeout(function () {
         buttonText.innerHTML = 'Copy';
     }, 1000)
-
-    let code = document.querySelector('pre>code');
+  
+   
+    let code = document.getElementById(`${snippetId}`);
+    console.log('code: ' + code);
     let text = code.textContent || code.innerHTML;
 
     console.log(text);

@@ -25,6 +25,10 @@ namespace BlazorCodeSnippets.Components
 
         private string SelectedLanguage;
 
+        protected string ButtonId = $"SnippetButton-{Guid.NewGuid()}";
+
+        protected string SnippetId = $"Snippet-{Guid.NewGuid()}";
+
         private readonly Lazy<Task<IJSObjectReference>> moduleTask;
 
         private bool FileFound { get; set; } = false;
@@ -77,7 +81,7 @@ namespace BlazorCodeSnippets.Components
         private async Task CopySnippetToClipboard()
         {
             var module = await moduleTask.Value;
-            await module.InvokeVoidAsync("copyToClipboard");
+            await module.InvokeVoidAsync("copyToClipboard", ButtonId, SnippetId);
         }
 
         public async ValueTask DisposeAsync()

@@ -4,13 +4,13 @@
         @if (AllowCopy)
         {
             <div class="copyButtonDiv">
-                <button class="copyButton" @onclick="CopySnippetToClipboard">
+                <button id="@ButtonId" class="copyButton" @onclick="CopySnippetToClipboard">
                     <span class="button-text">Copy</span><img class="copy" src="_content/BlazorCodeSnippets/fontawesome/svgs/regular/clipboard.svg" alt="copy" />
                 </button>
             </div>
         }
 
-        <pre>
+        <pre id="@SnippetId">
         <code @attributes="AdditionalAttributes" class="@SelectedLanguage">
 
                 @SnippetCode

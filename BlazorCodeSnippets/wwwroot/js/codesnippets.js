@@ -70,13 +70,15 @@ export function highlightSnippet() {
         hljs.highlightElement(el);
     });
 }
-export function copyToClipboard() {
-    let buttonText = document.querySelector(".button-text");
+export function copyToClipboard(buttonId, snippetId) {
+    let button = document.getElementById(`${buttonId}`);
+    let buttonText = button.querySelector('.button-text');
     buttonText.innerHTML = 'Copied';
     setTimeout(function () {
         buttonText.innerHTML = 'Copy';
     }, 1000);
-    let code = document.querySelector('pre>code');
+    let code = document.getElementById(`${snippetId}`);
+    console.log('code: ' + code);
     let text = code.textContent || code.innerHTML;
     console.log(text);
     let copiedText = document.createElement('textarea');
