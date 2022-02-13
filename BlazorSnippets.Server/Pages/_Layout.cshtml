@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="BlazorSnippets.Server.styles.css" rel="stylesheet" />
-     <link href="_content/BlazorCodeSnippets/css/BlazorSnippet/codepen-embed.min.css" rel="stylesheet" />
+     <link id="blazorSnippetTheme" href="_content/BlazorCodeSnippets/css/BlazorSnippet/equilibrium-light.min.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
@@ -29,5 +29,24 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script>
+        function ResetToDefaultStyle() {
+            let oldLink = document.getElementById('blazorSnippetTheme');
+
+            if (oldLink.getAttribute('href') == "_content/BlazorCodeSnippets/css/BlazorSnippet/default-light.min.css") {
+                return;
+            }
+
+            let newLink = document.createElement('link');
+            newLink.setAttribute('id', 'blazorSnippetTheme');
+            newLink.setAttribute('rel', 'stylesheet');
+            newLink.setAttribute('href', "_content/BlazorCodeSnippets/css/BlazorSnippet/equilibrium-light.min.css");
+            newLink.onload = () => {
+                oldLink.parentElement.removeChild(oldLink);
+            }
+
+            document.head.appendChild(newLink);
+        }
+    </script>
 </body>
 </html>

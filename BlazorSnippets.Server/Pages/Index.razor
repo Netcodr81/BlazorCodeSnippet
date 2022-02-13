@@ -1,8 +1,75 @@
 ﻿@page "/"
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@inject ILanguagesService LanguageService
 
-<PageTitle>Index</PageTitle>
+<PageTitle>BlazorCodeSnippet</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 class="mb-4">BlazorCodeSnippet</h1>
 
-Welcome to your new app.
 
+
+<h4>Purpose of this component library</h4>
+<p>
+    The main problem with documenting how to use your Blazor component library is there is no good way to do so without using
+    a bunch of <code>span</code> tags. In a normal html application, the use of the <code>pre</code> and <code>code</code>
+    tags are enough to do the job. However due to the way Blazor renders components, when you create a code snippet for your Blazor component this is what you get.
+</p>
+
+
+<div class="card">
+    <div class="fw-bolder card-header">
+        Expected
+    </div>
+    <div class="card-body">
+        <BlazorCodeSnippet SnippetFilePath="/snippetfiles/helloworldcomponent.txt" Language="SnippetLanguage.Razor" AllowCopy="true" />
+    </div>
+</div>
+
+
+<div class="card mt-3 mb-3">
+    <div class="fw-bolder card-header">
+        What you actually get
+    </div>
+    <div class="card-body">
+        <h1>Hello World</h1>
+    </div>
+</div>
+
+
+<p>
+    The only way to get the expected outcome is by using a bunch of <code>span</code> tags and a bunch of css. The goal of this component library is to elemenate the need to use
+    this technique to create beatifully documented code snippets for your component library. This library uses the <a href="https://highlightjs.readthedocs.io/en/latest/readme.html" target="_blank">highlight.js</a> javascript library to accomplish this. Below
+    are the languages supported by this library.
+</p>
+
+
+<div class="card mt-3 mb-3">
+    <div class="fw-bolder card-header">
+        Supported Languages
+    </div>
+    <div class="card-body">
+        <div class="language-list">
+            <ul>
+                @foreach (var language in LanguageService.GetAvailableLanguages())
+                {
+                    <li>@language</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<p class="mt-3">
+    This component library also contains a large selection of built in styles for you to use. If none of them suit your needs, see the
+    highlight.js <a href="https://highlightjs.readthedocs.io/en/latest/theme-guide.html" target="_blank">Theme Guide</a> to see how to create your own.
+    To see a list of the available themes see the <a href="demo">Demo</a> page.
+</p>
+
+@code {
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("ResetToDefaultStyle");
+    }
+}

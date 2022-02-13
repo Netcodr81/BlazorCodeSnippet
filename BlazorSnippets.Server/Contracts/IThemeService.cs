@@ -1,5 +1,6 @@
-﻿
-namespace BlazorSnippets.WASM.Contracts
+﻿using BlazorSnippets.Server.Shared.Themes;
+
+namespace BlazorSnippets.Server.Contracts
 {
     public interface IThemeService
     {

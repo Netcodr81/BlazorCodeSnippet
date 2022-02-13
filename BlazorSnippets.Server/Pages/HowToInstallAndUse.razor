@@ -1,0 +1,77 @@
+﻿@page "/installation-and-use"
+@inject IJSRuntime JSRuntime
+
+<h3>Installation</h3>
+
+<h4 class="mt-3">1. Install The Package</h4>
+
+
+    <p class="mt-3 mb-0">Install using the Package-Manager</p>
+    <BlazorCodeSnippet class="mb-3" Language="SnippetLanguage.Powershell" SnippetFilePath="/snippetfiles/installation-via-powershell.txt" AllowCopy="true" />
+
+    <p class="mt-3 mb-0">Using DotNet CLI</p>
+    <BlazorCodeSnippet Language="SnippetLanguage.Powershell" SnippetFilePath="/snippetfiles/installation-via-cli.txt" AllowCopy="true" />
+
+
+<h4 class="mt-3">2. Register Services</h4>
+
+<p>Add the following line of code to the <code>Program.cs</code> or the <code>Startup.cs</code> class</p>
+<BlazorCodeSnippet Language="SnippetLanguage.Csharp" SnippetFilePath="/snippetfiles/registerservice.txt" AllowCopy="true"/>
+
+<h4 class="mt-3">3. Add Imports</h4>
+
+<p>Add the following imports to your _imports.razor</p>
+<BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/snippetfiles/imports.txt" AllowCopy="true"/>
+
+<h4 class="mt-3">3. Add the CSS stylesheet</h4>
+<p>Add the link to the CSS file to the <code>index.html</code> file in a Blazor WASM app or the <code>_Layout.cshtml</code> page in a Blazor Server app</p>
+<BlazorCodeSnippet Language="SnippetLanguage.Html" SnippetFilePath="/snippetfiles/stylelocation.txt" AllowCopy="true"/>
+
+<h3 class="mt-3">Usage</h3>
+
+<p>Component Properties</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Value Type</th>
+            <th>What it's for</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SnippetFilePath</td>
+            <td><code>string</code></td>
+            <td>The path to the snippet starting off the wwwroot folder</td>
+            <td>"/example.txt"</td>
+        </tr>
+        <tr>
+            <td>AllowCopy</td>
+            <td><code>bool</code></td>
+            <td>Allows the user to copy the code snippet. The default is <code>false</code></td>
+            <td><code>true</code> or <code>false</code></td>
+        </tr>
+         <tr>
+            <td>Language</td>
+            <td><code>SnippetLanguage</code></td>
+            <td>The language of your code snippet</td>
+            <td><code>SnippetLanguage.CSharp</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>1. Create a text or html file containing the snippet you want to render for example <code>imports.txt</code>.</p>
+
+<p>2. Add the txt or html file to the wwwroot folder</p>
+
+<p class="mt-3">2. Add the <code>BlazorCodeSnippet</code> to the page</p>
+
+<BlazorCodeSnippet SnippetFilePath="/snippetfiles/example.txt" Language="SnippetLanguage.Razor"/>
+
+@code{
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("ResetToDefaultStyle");
+    }
+}

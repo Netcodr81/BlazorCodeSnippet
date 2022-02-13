@@ -1,10 +1,14 @@
 using BlazorCodeSnippets.Infrastructure.Extensions;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddBlazorCodeSnippet();
+builder.Services.AddTransient<IThemeService, ThemeService>();
+builder.Services.AddTransient<ILanguagesService, LanguagesService>();
 builder.Services.AddSingleton(new HttpClient
 {
     BaseAddress = new Uri("http://localhost:5049/")

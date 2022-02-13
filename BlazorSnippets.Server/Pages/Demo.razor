@@ -1,0 +1,40 @@
+﻿@page "/demo"
+@inject IThemeService ThemeService
+
+<h3>Demo</h3>
+
+
+<div class="card">
+    <div class="card-header">
+        <p class="mb-2">Available Themes</p>
+        <ThemeSwitcher />
+    </div>
+    <div class="card-body">
+        <BlazorCodeSnippet SnippetFilePath="snippetfiles/demo.txt" Language="SnippetLanguage.Csharp" AllowCopy="true">
+            <FileNotFound>
+                <p>File can't be found</p>
+            </FileNotFound>
+        </BlazorCodeSnippet>
+    </div>
+</div>
+
+
+<div class="card mt-3 mb-3">
+    <div class="fw-bolder card-header">
+        Theme List
+    </div>
+    <div class="card-body">
+        <div class="theme-list">
+            <ul>
+                @foreach (var theme in ThemeService.GetThemes())
+                {
+                    <li>@theme.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
