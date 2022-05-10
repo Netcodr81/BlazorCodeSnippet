@@ -58,7 +58,7 @@ Or go to [nuget.org](https://www.nuget.org/) and search for ***BlazorCodeSnippet
 
 ```
 
-See a complete list of the available stylesheets here
+See a complete list of the available stylesheets [here](https://github.com/Netcodr81/BlazorCodeSnippet/blob/beta-branch/Available%20Stylesheets.md)
 
 ## Usage
 
@@ -75,7 +75,7 @@ Component Properties
 ```csharp
 <BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/snippets/codesnippet.txt" AllowCopy="true"/>
 ```
-A list of all the ***SnippetLanage*** enums can be found here
+A list of all the ***SnippetLanage*** enums can be found [here](https://github.com/Netcodr81/BlazorCodeSnippet/blob/beta-branch/Available%20SnippetLanguage%20Enums.md)
 
 
 
