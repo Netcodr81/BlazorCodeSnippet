@@ -207,6 +207,39 @@
 <link href="_content/BlazorCodeSnippets/css/BlazorSnippets/ssms.min.css" rel="stylesheet"/>
 <link href="_content/BlazorCodeSnippets/css/BlazorSnippets/stackoverflow-dark.min.css" rel="stylesheet"/>
 <link href="_content/BlazorCodeSnippets/css/BlazorSnippets/stackoverflow-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/summercamp.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/summerfruit-dark.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/summerfruit-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/sunburst.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/synth-midnight-terminal-dark.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/synth-midnight-terminal-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tango.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tender.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tomorrow.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tomorrow-night.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tomorrow-night-blue.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tomorrow-night-bright.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/tomorrow-night-eighties.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/twilight.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/unikitty-dark.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/unikitty-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/vs.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/vs2015.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/vulcan.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-10.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-10-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-95.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-95-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-high-contrast.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-high-contrast-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-nt.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/windows-nt-light.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/woodland.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/xcode.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/xcode-dusk.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/xt256.min.css" rel="stylesheet"/>
+<link href="_content/BlazorCodeSnippets/css/BlazorSnippets/zenburn.min.css" rel="stylesheet"/>
+
 
 
 
