@@ -1,7 +1,7 @@
 # BlazorCodeSnippet
 
 ## Overview
-A problem when developing a Blazor component library arises when you want to document how to use the component library. For example, say you want to document how to use your HelloWorld component. You surround the component with ***code*** and ***pre*** tags expecting to see something like this:
+A problem when developing a Blazor component library arises when you want to document how to use the component library. For example, say you want to document how to use your HelloWorld component. You surround the component with **code** and **pre** tags expecting to see something like this:
 
 ```csharp
 <HelloWorld Message="Hello World">
@@ -11,7 +11,7 @@ However, when you run your application you see this:
 ```
     Hello World
 ```
-This is because Blazor's rendering engine ignores the ***code*** and ***pre*** tags and renders the component. This leaves developers with only one option to document their code, a bunch of ***span*** tags styled with css. BlazorCodeSnippet is aimed to alliviate this problem by giving developers a component that can be used to document their code. This component is a wrapper around the [highlight.js](https://highlightjs.org/) package and provides the style highlighting for 37 common languges. It comes with over 200 styles out of the box, however you can develop your own using the guide found here at the [Highlight.js Theme Guide](https://highlightjs.readthedocs.io/en/latest/theme-guide.html).
+This is because Blazor's rendering engine ignores the **code** and **pre** tags and renders the component. This leaves developers with only one option to document their code, a bunch of **span** tags styled with css. BlazorCodeSnippet is aimed to alliviate this problem by giving developers a component that can be used to document their code. This component is a wrapper around the [highlight.js](https://highlightjs.org/) package and provides the style highlighting for 37 common languges. It comes with over 200 styles out of the box, however you can develop your own using the guide found here at the [Highlight.js Theme Guide](https://highlightjs.readthedocs.io/en/latest/theme-guide.html).
 
 ## How to install
 
@@ -60,6 +60,8 @@ Or go to [nuget.org](https://www.nuget.org/) and search for ***BlazorCodeSnippet
 
 See a complete list of the available stylesheets [here](https://github.com/Netcodr81/BlazorCodeSnippet/blob/beta-branch/Available%20Stylesheets.md)
 
+**Note** : If you create your own theme, add the stylesheet to your projects' wwwroot folder and add the link to that file in the index.html or _Layout.cshtml
+
 ## Usage
 
 Component Properties
@@ -71,11 +73,11 @@ Component Properties
 
 1. Create a text or html file containing the snippet you want the component to render, for example codesnippet.txt.
 2. Add the file to the wwwroot folder. For example, create a folder called snippets and place the file in it.
-3. Add the ***BlazorCodeSnippet*** component to the page
+3. Add the **BlazorCodeSnippet** component to the page
 ```csharp
 <BlazorCodeSnippet Language="SnippetLanguage.Razor" SnippetFilePath="/snippets/codesnippet.txt" AllowCopy="true"/>
 ```
-A list of all the ***SnippetLanage*** enums can be found [here](https://github.com/Netcodr81/BlazorCodeSnippet/blob/beta-branch/Available%20SnippetLanguage%20Enums.md)
+A list of all the **SnippetLanage** enums can be found [here](https://github.com/Netcodr81/BlazorCodeSnippet/blob/beta-branch/Available%20SnippetLanguage%20Enums.md)
 
 
 
