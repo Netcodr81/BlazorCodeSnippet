@@ -34,7 +34,7 @@ Or go to [nuget.org](https://www.nuget.org/) and search for ***BlazorCodeSnippet
 ```csharp
 <!-- When adding to Program.cs -->
 
-   builder.services.AddBlazorCodeSnippet():
+   builder.Services.AddBlazorCodeSnippet():
 
 <!-- When Adding to Startup.cs -->
 
